@@ -1,7 +1,7 @@
 public class CompteBancaire {
-    private String nomCompte;
-    private int numeroCompte;
-    private double solde;
+    protected String nomCompte;
+    protected int numeroCompte;
+    protected double solde;
 
     public CompteBancaire(String nomCompte, int numeroCompte) {
         this.solde = 0;
