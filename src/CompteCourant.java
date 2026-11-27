@@ -9,7 +9,7 @@ public class CompteCourant extends CompteBancaire {
         double soldeApres = getSolde() - montantRetrait;
         if (montantRetrait <= 0){
             System.out.println("Veuillez saisir un montant supérieur à 0");
-        } else if (soldeApres > decouvert) {
+        } else if (soldeApres < decouvert) {
             System.out.println("Retrait refusé, montant de découvert autorisé atteint");
         } else {
             solde -= montantRetrait;
@@ -17,6 +17,7 @@ public class CompteCourant extends CompteBancaire {
     }
     @Override
     public void afficher() {
-        System.out.println("Bonjour " + nomCompte + " au numéro de compte : " + numeroCompte + " votre solde est de " + solde + " euros" + " et votre découvert autorisé est de " + decouvert);
+        super.afficher();
+        System.out.println("Votre découvert autorisé est de " + decouvert);
     }
 }
